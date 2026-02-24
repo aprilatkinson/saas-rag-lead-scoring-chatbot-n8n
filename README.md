@@ -67,3 +67,16 @@ Body example is in `examples/request.json`.
 ### Option B: curl
 ```bash
 bash examples/curl_test.sh "https://YOUR_N8N_DOMAIN/webhook-test/customer-chat"
+
+### Response format
+{
+  "answer": "…",
+  "follow_up_question": "…",
+  "intent": "integration inquiry",
+  "lead_score": 7
+}
+Notes / limitations
+
+This is “RAG-lite” (Google Sheets KB + keyword/topic matching).
+
+For production scale: replace Sheets retrieval with a vector DB + embeddings and add auth/rate limiting.
